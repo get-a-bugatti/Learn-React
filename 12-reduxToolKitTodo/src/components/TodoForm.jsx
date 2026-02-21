@@ -5,11 +5,12 @@ import {addTodo} from "../features/todo/todoSlice.js"
 export default function TodoForm() {
     const  taskNameId = useId();
     const [taskName, setTaskName] = useState("");
+    const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        useDispatch(addTodo(taskName));
+        dispatch(addTodo(taskName));
         setTaskName("");
     }
 
